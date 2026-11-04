@@ -1,0 +1,38 @@
+Name,Example Value,Handlebar,Used in,Sourced from,Screenshot 1,Screenshot 2,Screenshot 3
+Org username,user@example.com,{ORG_username},Authorize an org; CLI commands (--target-org); Import and Export Products with CLI; OCI Postman environment,"The Verify Your Account email. It looks like an email address, but it is a username.",,,
+Org alias,om-prework,{ORG_alias},CLI commands and deploys in VS Code; Create Products with Apex; Import Orders,The alias you chose in SFDX: Authorize an Org.,,,
+Org Id,00DXXXXXXXXXXXX,{ORG_Id},Create an Environment (trial extension request); OCI,"Setup, Company Information. You can also find it in the output of sf org display.",,,
+Org My Domain URL,https://example-om-org.my.salesforce.com,{ORG_myDomainUrl},Query with REST API; Composite API; Connect REST API; OCI Postman environment,"Instance Url in the output of sf org display, or the address bar after you log in.",,,
+Org login URL,https://login.salesforce.com,{ORG_loginUrl},Authorize an org; OCI Postman environment,Fixed value. Trial orgs use the production login URL.,,,
+REST API version,v68.0,{ORG_apiVersion},Every REST API URL; Composite and Graph API activities; U0 Appendix J,"REST API Developer Guide, Versions page (Winter '27 is API version 68.0).",,,
+Trialforce Template Id,0TTXXXXXXXXXXXX,{ORG_TTID},Create an Environment,The Order Management Environment Guide.,,,
+Sales Channel Id,0bIXXXXXXXXXXXXXXX,{OM_salesChannelId},Place a Test Order; Place Additional Order; Import Historical Orders; Composite and Graph API activities; U0 Appendix J,"SOQL on SalesChannel (U0 Appendix J, Option C, script 1).",,,
+Standard Price Book Id,01sXXXXXXXXXXXXXXX,{OM_standardPricebookId},Place a Test Order; Place Additional Order; Composite and Graph API activities,SELECT Id FROM Pricebook2 WHERE Name = 'Standard Price Book',,,
+Shipping product Id,01tXXXXXXXXXXXXXXX,{OM_shippingProductId},Configure Delivery Methods; Place a Test Order; Graph API activity,"SOQL on Product2 (U0 Appendix J, Option C, script 5).",,,
+Shipping price book entry Id,01uXXXXXXXXXXXXXXX,{OM_shippingPricebookEntryId},Place a Test Order; Place Additional Order; Graph API activity,"SOQL on PricebookEntry (U0 Appendix J, Option C, script 3).",,,
+Delivery method Id,2DmXXXXXXXXXXXXXXX,{OM_deliveryMethodId},Configure Delivery Methods; Place a Test Order; Graph API activity,"SOQL on OrderDeliveryMethod (U0 Appendix J, Option C, script 4).",,,
+Account Id,001XXXXXXXXXXXXXXX,{OM_accountId},Place a Test Order; Composite and Graph API activities,"SELECT Id, Name FROM Account",,,
+Location Id,LOCATION_ID_XXXX,{OM_locationId},Fulfillment flow activities; Activate Omnichannel Inventory; OCI headless APIs,"SOQL on Location, or the Locations tab.",,,
+Location Group Id,LOCATION_GROUP_ID_XXXX,{OM_locationGroupId},Fulfillment flow activities; Activate Omnichannel Inventory,"SOQL on LocationGroup, or the Location Groups tab.",,,
+Order reference number,OMS-HEALTHCHECK-1,{OM_orderReferenceNumber},Place a Test Order; Place Additional Order; Composite and Graph API activities; U0 Appendix J,The order JSON payload. It must be unique for every run.,,,
+Order number,ORDER_NUMBER_XXXX,{OM_orderNumber},Approve the Order Summary; Place Additional Order; U0 Appendices J and K,"The Order record, or the response of the Composite API call.",,,
+Order Summary Id,1OsXXXXXXXXXXXXXXX,{OM_orderSummaryId},"Approve, Allocate, Invoice, Fulfill, Discount and Return activities; Query with SOQL, REST API and Composite API","SELECT Id, OrderNumber FROM OrderSummary ORDER BY CreatedDate DESC LIMIT 5",,,
+Order Item Summary Id,10uXXXXXXXXXXXXXXX,{OM_orderItemSummaryId},Discount an Order Item; Return the Order; Connect REST API basics,"SELECT Id, Name FROM OrderItemSummary WHERE OrderSummaryId = '{OM_orderSummaryId}'",,,
+Fulfillment Order Id,0a3XXXXXXXXXXXXXXX,{OM_fulfillmentOrderId},Generate the Invoice and Settle; Fulfill the Order; Create a Flow Action,"SELECT Id, Status FROM FulfillmentOrder",,,
+Invoice Id,INVOICE_ID_XXXX,{OM_invoiceId},Generate the Invoice and Settle,"SELECT Id FROM Invoice, after you generate the invoice.",,,
+Payment Gateway Provider Id,0cJXXXXXXXXXXXXXXX,{OM_paymentGatewayProviderId},Create the Payment Gateway Provider; Create the Payment Gateway,The response of the composite request in the activity.,,,
+Payment Gateway Id,0b0XXXXXXXXXXXXXXX,{OM_paymentGatewayId},Create the Payment Gateway; Capture Payment Token,The response of the composite request in the activity.,,,
+Named Credential Id,0XAXXXXXXXXXXXXXXX,{OM_namedCredentialId},Deploy Named Credentials; Create the Payment Gateway,The response of the composite request in the activity.,,,
+OCI base URL,OCI_BASE_URL_EXAMPLE,"{OCI_baseUrl}
+Postman variable: host",OCI headless APIs,"Setup, Omnichannel Inventory, Base URL for Inventory API Calls.",,,
+OCI tenant group Id,TENANT_GROUP_ID_XXXX,"{OCI_tenantGroupId}
+Postman variable: tenantId",OCI headless APIs,"Setup, Omnichannel Inventory, Tenant Group ID.",,,
+OCI app consumer key,CONSUMER_KEY_XXXX,"{OCI_consumerKey}
+Postman variable: connectedAppConsumerKey",OCI headless APIs; JWT builder,"Setup, App Manager, the app, Manage Consumer Details.",,,
+OCI app consumer secret (Secret),****,"{OCI_consumerSecret}
+Postman variable: connectedAppConsumerSecret",OCI headless APIs,Same page as the consumer key. Keep it private.,,,
+OCI JWT token,JWT_TOKEN_XXXX,"{OCI_jwt}
+Postman variable: JWT",OCI headless APIs,The JWT builder output. It expires after 1 hour.,,,
+Security token (Secret),****,"{ORG_securityToken}
+Postman variable: orgAdminSecurityToken",OCI headless APIs,"User settings, Reset My Security Token. Keep it private.",,,
+Private key file path,/path/to/pkcs8_key,{JWT_privateKeyPath},OCI headless APIs; JWT builder,The folder where you saved your private key. Keep the file private.,,,
